@@ -3,7 +3,7 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: #C9D6FE;
+  background-color: #FDEFB2;
 }
 
 .vinyl-turntable {
@@ -13,7 +13,12 @@
   align-items: center;
 }
 
-.vinyl-record {
+.vinyl-record-stationary {
+  height: 500px;
+  width: 500px;
+}
+
+.vinyl-record-playing {
   height: 500px;
   width: 500px;
   animation: spin 10s linear infinite forwards;
@@ -23,32 +28,49 @@
   height: 500px;
   width: 500px;
   animation-play-state: paused;
+  animation-fill-mode: forwards;
 }
 
-.vinyl-stylus {
+.vinyl-stylus-stationary {
   position: absolute;
-  right:-500px;
+  right: -500px;
   height: 500px;
   width: auto;
-  transform-origin: left center;
+  transform-origin: 62px 60px;
+  animation-fill-mode: forwards;
+}
+
+.vinyl-stylus-paused {
+  position: absolute;
+  right: -500px;
+  height: 500px;
+  width: auto;
+  transform-origin: 62px 60px;
+  animation: move-right 2s 1 forwards;
+  animation-fill-mode: forwards;
 }
 
 .vinyl-stylus-playing {
   position: absolute;
-  right:-500px;
+  right: -500px;
   height: 500px;
   width: auto;
-  transform-origin: left top;
-  animation: move-left 2s 1;
+  transform-origin: 62px 60px;
+  animation: move-left 2s 1 forwards;
+  animation-fill-mode: forwards;
 }
-
 
 @keyframes spin {
-  from{transform: rotate(0deg);}
-  to{transform: rotate(360deg);}
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-@keyframes move-left{
-  from{transform: rotate(0deg)}
-  to{transform: rotate(30deg);}
+@keyframes move-left {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(30deg); }
+}
+
+@keyframes move-right {
+  from { transform: rotate(30deg); }
+  to { transform: rotate(0deg); }
 }

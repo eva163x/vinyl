@@ -1,0 +1,54 @@
+.vinyl-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #C9D6FE;
+}
+
+.vinyl-turntable {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vinyl-record {
+  height: 500px;
+  width: 500px;
+  animation: spin 10s linear infinite forwards;
+}
+
+.vinyl-record-paused {
+  height: 500px;
+  width: 500px;
+  animation-play-state: paused;
+}
+
+.vinyl-stylus {
+  position: absolute;
+  right:-500px;
+  height: 500px;
+  width: auto;
+  transform-origin: left center;
+}
+
+.vinyl-stylus-playing {
+  position: absolute;
+  right:-500px;
+  height: 500px;
+  width: auto;
+  transform-origin: left top;
+  animation: move-left 2s 1;
+}
+
+
+@keyframes spin {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+@keyframes move-left{
+  from{transform: rotate(0deg)}
+  to{transform: rotate(30deg);}
+}
